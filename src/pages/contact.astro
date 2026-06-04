@@ -1,0 +1,573 @@
+---
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get in touch &mdash; Pawswick Rescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="logo">Pawswick<span>Rescue</span></a>
+    <ul>
+      <li><a href="/cats">Meet the cats</a></li>
+      <li><a href="/about">About us</a></li>
+      <li><a href="/volunteer">Volunteer</a></li>
+      <li><a href="/adopt" class="nav-cta">Adopt now</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <div class="page-header-text">
+        <p class="eyebrow">We'd love to hear from you</p>
+        <h1>Get in <em>touch</em></h1>
+        <p class="page-sub">Whether you've got questions about adopting, want to volunteer, or just fancy a chat about cats, we're here for it.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="contact-main">
+    <div class="contact-grid">
+      
+      <!-- FORM -->
+      <section class="form-section">
+        <form class="contact-form" name="contact" method="POST" netlify>
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">What's this about?</label>
+            <select id="subject" name="subject" required>
+              <option value="">Choose one...</option>
+              <option value="adoption">I want to adopt a cat</option>
+              <option value="volunteer">I want to volunteer</option>
+              <option value="foster">I'm interested in fostering</option>
+              <option value="donation">I want to donate</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary btn-large">Send message</button>
+        </form>
+      </section>
+
+      <!-- INFO SIDEBAR -->
+      <aside class="info-sidebar">
+        <div class="info-box">
+          <h3>Opening hours</h3>
+          <p>
+            <strong>Monday to Sunday</strong><br>
+            10:00 AM &ndash; 5:00 PM
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>Phone</h3>
+          <p>
+            <a href="tel:+353121345678">+353 (0)1 2134 5678</a><br>
+            <span class="info-note">Best between 11am&ndash;3pm</span>
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>Visit us</h3>
+          <p>
+            Pawswick Rescue<br>
+            45 Smithfield Lane<br>
+            Dublin 7, D07 A2K9<br>
+            Ireland
+          </p>
+        </div>
+
+        <div class="info-box info-box-highlight">
+          <h3>Quick question?</h3>
+          <p>Check our <a href="#faq" class="link-highlight">FAQs</a> first &ndash; chances are we've answered it already.</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- MAP SECTION (placeholder) -->
+  <section class="map-section">
+    <div class="map-inner">
+      <h2>Find us in Dublin</h2>
+      <div class="map-placeholder">
+        <p>Map would go here</p>
+        <p class="map-address">45 Smithfield Lane, Dublin 7</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div>
+        <p class="eyebrow eyebrow-light">Ready to adopt?</p>
+        <h2>Browse our cats</h2>
+        <p>See if there's a feline friend waiting for you in our care.</p>
+      </div>
+      <a href="/cats" class="btn-primary btn-large">See available cats</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Pawswick<span>Rescue</span></span>
+        <p>A small rescue doing big things for cats in need.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/cats">Cats for adoption</a>
+        <a href="/about">About us</a>
+        <a href="/volunteer">Volunteer</a>
+        <a href="/contact">Contact</a>
+        <a href="/donate">Donate</a>
+      </div>
+      <p class="footer-copy">&copy; {new Date().getFullYear()} Pawswick Rescue. Registered charity.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:   #FFF8F0;
+    --cream2:  #FFF0E0;
+    --orange:  #F26430;
+    --orange2: #E04A18;
+    --charcoal:#1C1C1C;
+    --mid:     #5A5A5A;
+    --muted:   #9A8E85;
+    --green:   #2D7D4F;
+    --green-bg:#E6F4ED;
+    --sand:    #F5EDE3;
+    --radius:  16px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    background: rgba(255, 248, 240, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(242, 100, 48, 0.1);
+  }
+
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--charcoal);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .logo span { color: var(--orange); }
+
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  nav ul a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav ul a:hover { color: var(--charcoal); }
+
+  .nav-cta {
+    background: var(--orange) !important;
+    color: #fff !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--orange2) !important; }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--charcoal);
+    border-radius: 2px;
+  }
+
+  /* EYEBROW */
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.6rem;
+  }
+  .eyebrow-light { color: rgba(242, 100, 48, 0.75); }
+
+  /* PAGE HEADER */
+  .page-header {
+    background: var(--charcoal);
+    padding: 4rem 5%;
+  }
+
+  .page-header-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+  }
+
+  .page-header-text h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #fff;
+    line-height: 1.05;
+  }
+  .page-header-text h1 em {
+    font-style: italic;
+    color: var(--orange);
+  }
+
+  .page-sub {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.55);
+    max-width: 480px;
+  }
+
+  /* MAIN CONTENT */
+  .contact-main {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 4rem 5%;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+
+  /* FORM */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(28, 28, 28, 0.12);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--charcoal);
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(242, 100, 48, 0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235A5A5A' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  /* INFO SIDEBAR */
+  .info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .info-box {
+    background: #fff;
+    border: 1px solid rgba(28, 28, 28, 0.08);
+    border-radius: var(--radius);
+    padding: 1.6rem;
+  }
+
+  .info-box h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.8rem;
+    color: var(--charcoal);
+  }
+
+  .info-box p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--mid);
+  }
+
+  .info-box a {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .info-box a:hover { color: var(--orange2); }
+
+  .info-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    display: block;
+    margin-top: 0.3rem;
+  }
+
+  .info-box-highlight {
+    background: var(--cream2);
+    border-color: rgba(242, 100, 48, 0.2);
+  }
+
+  .link-highlight {
+    color: var(--orange);
+    font-weight: 600;
+  }
+
+  /* MAP SECTION */
+  .map-section {
+    background: var(--charcoal);
+    padding: 4rem 5%;
+  }
+
+  .map-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .map-inner h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+  }
+
+  .map-placeholder {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+
+  .map-placeholder p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+  }
+
+  .map-address {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    background: linear-gradient(135deg, var(--charcoal) 0%, #2a2a2a 100%);
+    padding: 5rem 5%;
+  }
+
+  .cta-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-inner h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.6rem;
+  }
+
+  .cta-inner p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.5);
+    max-width: 440px;
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    padding: 0.85rem 1.8rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    font-family: 'DM Sans', sans-serif;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  .btn-primary:hover { background: var(--orange2); transform: translateY(-2px); }
+  .btn-large { padding: 1rem 2.4rem; font-size: 1.05rem; }
+
+  /* FOOTER */
+  footer {
+    background: #111;
+    padding: 3.5rem 5%;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-brand p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 0.4rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #fff; }
+
+  .footer-copy {
+    width: 100%;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.25);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding-top: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 600px) {
+    nav ul { display: none; }
+    .menu-toggle { display: flex; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+</style>
