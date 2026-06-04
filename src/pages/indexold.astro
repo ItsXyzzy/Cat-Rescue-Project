@@ -21,7 +21,6 @@ const steps = [
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#FFF8F0" />
   <title>Pawswick Rescue</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -138,7 +137,7 @@ const steps = [
         <p class="eyebrow">Get involved</p>
         <h2>We run on good people</h2>
         <p>Whether you can spare a few hours a week or want to foster a cat short-term, we'd love your help. Every pair of hands makes a real difference to the cats in our care.</p>
-        <a href="/volunteer" class="btn-ghost">Become a volunteer</a>
+        <a href="/volunteer" class="btn-ghost btn-ghost-dark">Become a volunteer</a>
       </div>
       <div class="vol-cards">
         <div class="vol-card">
@@ -173,15 +172,6 @@ const steps = [
     </div>
   </footer>
 
-  <!-- MOBILE NAVIGATION SCRIPT -->
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-
-    menuToggle?.addEventListener('click', () => {
-      nav?.classList.toggle('nav-open');
-    });
-  </script>
 </body>
 </html>
 
@@ -280,7 +270,6 @@ const steps = [
     height: 2px;
     background: var(--charcoal);
     border-radius: 2px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
   /* EYEBROW */
@@ -807,10 +796,6 @@ const steps = [
     justify-content: space-between;
   }
 
-  .footer-brand .logo {
-    color: #fff;
-  }
-
   .footer-brand p {
     font-size: 0.85rem;
     color: rgba(255,255,255,0.4);
@@ -841,7 +826,7 @@ const steps = [
     margin-top: 0.5rem;
   }
 
-  /* RESPONSIVE & MOBILE FLYOUT CONFIGURATION */
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     .hero {
       grid-template-columns: 1fr;
@@ -861,32 +846,8 @@ const steps = [
   }
 
   @media (max-width: 600px) {
-    .menu-toggle { display: flex; z-index: 101; }
-    
-    nav ul {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background: rgba(255, 248, 240, 0.98);
-      backdrop-filter: blur(16px);
-      padding: 2rem;
-      gap: 1.5rem;
-      border-bottom: 1px solid rgba(242, 100, 48, 0.12);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    nav.nav-open ul {
-      display: flex;
-    }
-
-    nav.nav-open .menu-toggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    nav.nav-open .menu-toggle span:nth-child(2) { opacity: 0; }
-    nav.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
+    nav ul { display: none; }
+    .menu-toggle { display: flex; }
     .cat-grid { grid-template-columns: 1fr; }
     .stats-strip { gap: 2rem; }
     .footer-inner { flex-direction: column; text-align: center; }
