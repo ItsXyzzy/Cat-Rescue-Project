@@ -1,7 +1,7 @@
 ---
 name: Cleo
 age: Kitten
-image: https://images.unsplash.com/photo-1555665093-7ee1adca2a24?w=600&auto=format&fit=crop&q=60
+image: https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 goodWithKids: true
 status: Available
 ---

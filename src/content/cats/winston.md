@@ -1,7 +1,7 @@
 ---
 name: Winston
 age: Senior
-image: https://images.unsplash.com/photo-1561948965-64cb2a0e59a5?w=600&auto=format&fit=crop&q=60
+image: https://images.unsplash.com/photo-1518288774672-b94e808873ff?q=80&w=738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 goodWithKids: false
 status: Available
 ---
