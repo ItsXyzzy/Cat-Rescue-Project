@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat Rescue Content Manager</title>
+    <!-- Include the script for the CMS Lib -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  </head>
+  <body>
+    <script>
+      CMS.init({
+        config: {
+          // Tells the CMS to save content directly to your GitHub repository
+          backend: {
+            name: 'git-gateway',
+            branch: 'main', 
+          },
+          // Where uploaded cat images will be saved
+          media_folder: 'public/images/cats',
+          public_folder: '/images/cats',
+          
+          // Defining the simple form for the volunteers
+          collections: [
+            {
+              name: 'cats',
+              label: 'Cats for Adoption',
+              folder: 'src/content/cats',
+              create: true,
+              slug: '{{slug}}',
+              fields: [
+                { label: 'Cat Name', name: 'name', widget: 'string' },
+                { label: 'Age / Life Stage', name: 'age', widget: 'select', options: ['Kitten', 'Young Adult', 'Mature', 'Senior'] },
+                { label: 'Profile Picture', name: 'image', widget: 'image' },
+                { label: 'Good with Children?', name: 'goodWithKids', widget: 'boolean', default: false },
+                { label: 'Adoption Status', name: 'status', widget: 'select', options: ['Available', 'Pending', 'Adopted'] },
+                { label: 'Cat Bio / Personality Description', name: 'body', widget: 'markdown' }
+              ]
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>
