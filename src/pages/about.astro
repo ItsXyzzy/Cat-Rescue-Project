@@ -1,0 +1,231 @@
+---
+// src/pages/about.astro
+const values = [
+  { icon: '🐾', title: 'Every cat matters', desc: 'We never give up on a cat, regardless of age, medical needs, or behavioral history. Every life has value.' },
+  { icon: '🏡', title: 'Home-based fostering', desc: 'We rely heavily on a network of loving foster homes so our cats learn to trust in a real household environment.' },
+  { icon: '🤝', title: 'Community first', desc: 'We believe in educating and supporting our local community in Pawswick with neutering programs and advice.' }
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Pawswick Rescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">Pawswick<span>Rescue</span></a>
+    <ul>
+      <li><a href="/cats">Meet the cats</a></li>
+      <li><a href="/about">About us</a></li>
+      <li><a href="/volunteer">Volunteer</a></li>
+      <li><a href="/adopt" class="nav-cta">Adopt now</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="about-hero">
+    <div class="about-hero-text">
+      <p class="eyebrow">Our Story</p>
+      <h1>Small rescue.<br /><em>Big</em> hearts.</h1>
+      <p class="hero-sub">We started in 2012 with a single stray tabby and a spare bathroom. Today, we have helped hundreds of cats find their soft landing.</p>
+    </div>
+    
+    <div class="about-visual">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&auto=format&fit=crop&q=80" alt="Volunteer holding a rescue cat" />
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="story-grid">
+      <div class="story-content">
+        <h2>Built on tea, biscuits, and a love for felines.</h2>
+        <p>Pawswick Rescue isn't a massive corporate charity. We are a tight-knit group of neighbors, veterinary nurses, and feline enthusiasts who noticed a growing number of strays in our local area and decided to do something about it.</p>
+        <p>We don't have a giant purpose-built facility. Instead, our cats live in specialized foster homes across Pawswick. This means we get to know exactly what they are like in a home environment—whether they love the sofa, hate the hoover, or have a habit of stealing socks.</p>
+        <p>When you adopt from us, you aren't just getting a pet; you are joining the Pawswick family.</p>
+      </div>
+      <div class="story-stats">
+        <div class="stat-box">
+          <span class="stat-box-num">12</span>
+          <span class="stat-box-label">Years active</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-num">340+</span>
+          <span class="stat-box-label">Adoptions</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-num">45</span>
+          <span class="stat-box-label">Active volunteers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="values-header">
+      <p class="eyebrow eyebrow-light">What drives us</p>
+      <h2>Our Core Values</h2>
+    </div>
+    
+    <div class="values-grid">
+      {values.map(val => (
+        <div class="value-card">
+          <span class="value-icon">{val.icon}</span>
+          <h3>{val.title}</h3>
+          <p>{val.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="volunteer-band">
+    <div class="cta-inner text-center">
+      <h2>Ready to meet your new best friend?</h2>
+      <p>Take a look at the cats currently waiting for their forever homes.</p>
+      <div class="hero-actions" style="justify-content: center; margin-top: 2rem;">
+        <a href="/cats" class="btn-primary btn-large">View our cats</a>
+        <a href="/contact" class="btn-ghost btn-ghost-dark" style="color: var(--charcoal); border-color: var(--charcoal);">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo" style="color: white;">Pawswick<span style="color: var(--orange);">Rescue</span></span>
+        <p>A small rescue doing big things for cats in need.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/cats">Cats for adoption</a>
+        <a href="/about">About us</a>
+        <a href="/volunteer">Volunteer</a>
+        <a href="/contact">Contact</a>
+        <a href="/donate">Donate</a>
+      </div>
+      <p class="footer-copy">&copy; {new Date().getFullYear()} Pawswick Rescue. Registered charity.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:   #FFF8F0;
+    --cream2:  #FFF0E0;
+    --orange:  #F26430;
+    --orange2: #E04A18;
+    --charcoal:#1C1C1C;
+    --mid:     #5A5A5A;
+    --muted:   #9A8E85;
+    --sand:    #F5EDE3;
+    --radius:  16px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
+
+  /* NAV (Reused) */
+  nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 5%; background: rgba(255, 248, 240, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(242, 100, 48, 0.1); }
+  .logo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.4rem; color: var(--charcoal); text-decoration: none; letter-spacing: -0.02em; }
+  .logo span { color: var(--orange); }
+  nav ul { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  nav ul a { font-size: 0.95rem; font-weight: 500; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+  nav ul a:hover { color: var(--charcoal); }
+  .nav-cta { background: var(--orange) !important; color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 100px; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--orange2) !important; }
+  .menu-toggle { display: none; }
+
+  /* COMMON COMPONENTS */
+  .eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.6rem; }
+  .eyebrow-light { color: rgba(255, 255, 255, 0.7); }
+  .btn-primary { display: inline-block; background: var(--orange); color: #fff; padding: 0.85rem 1.8rem; border-radius: 100px; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: var(--orange2); transform: translateY(-2px); }
+  .btn-ghost { display: inline-block; background: transparent; color: var(--charcoal); padding: 0.85rem 1.8rem; border-radius: 100px; font-weight: 600; text-decoration: none; border: 2px solid rgba(28, 28, 28, 0.18); transition: border-color 0.2s, transform 0.15s; }
+  .btn-ghost:hover { border-color: var(--charcoal); transform: translateY(-2px); }
+  .btn-large { padding: 1rem 2.4rem; font-size: 1.05rem; }
+
+  /* ABOUT HERO */
+  .about-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding: 6rem 5% 4rem; max-width: 1400px; margin: 0 auto; }
+  .about-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(3.2rem, 5vw, 4.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; color: var(--charcoal); margin-bottom: 1.4rem; }
+  .about-hero h1 em { font-style: italic; color: var(--orange); }
+  .hero-sub { font-size: 1.1rem; line-height: 1.7; color: var(--mid); max-width: 440px; }
+  
+  .about-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+  .about-img-wrap { position: relative; z-index: 2; width: 85%; aspect-ratio: 4/3; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08); }
+  .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  
+  /* REUSING BLOBS */
+  .blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.45; pointer-events: none; }
+  .blob-1 { width: 380px; height: 380px; background: #FBBF8A; top: -40px; right: -20px; animation: float 8s ease-in-out infinite; }
+  .blob-2 { width: 260px; height: 260px; background: #FDE68A; bottom: -20px; left: -20px; animation: float 10s ease-in-out infinite reverse; }
+  @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.04); } }
+
+  /* STORY SECTION */
+  .story-section { padding: 4rem 5% 6rem; background: #fff; }
+  .story-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 3fr 1fr; gap: 5rem; }
+  .story-content h2 { font-family: 'Fraunces', serif; font-size: 2.2rem; color: var(--charcoal); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+  .story-content p { font-size: 1.05rem; color: var(--mid); line-height: 1.8; margin-bottom: 1.5rem; }
+  
+  .story-stats { display: flex; flex-direction: column; gap: 2rem; border-left: 1px solid rgba(0,0,0,0.1); padding-left: 3rem; }
+  .stat-box-num { display: block; font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: var(--orange); line-height: 1; margin-bottom: 0.3rem; }
+  .stat-box-label { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; color: var(--mid); letter-spacing: 0.05em; }
+
+  /* VALUES SECTION (Using Cat Card aesthetics) */
+  .values-section { background: var(--charcoal); padding: 6rem 5%; }
+  .values-header { max-width: 1200px; margin: 0 auto 3.5rem; text-align: center; }
+  .values-header h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.03em; color: #fff; }
+  
+  .values-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .value-card { background: #2A2A2A; border-radius: var(--radius); padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.25s ease, background 0.25s ease; }
+  .value-card:hover { transform: translateY(-6px); background: #333; }
+  .value-icon { font-size: 2.5rem; display: block; margin-bottom: 1.5rem; }
+  .value-card h3 { font-family: 'Fraunces', serif; font-size: 1.4rem; color: #fff; margin-bottom: 1rem; }
+  .value-card p { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+  /* CTA BAND */
+  .volunteer-band { background: #FFF0E0; padding: 6rem 5%; }
+  .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .cta-inner h2 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 700; color: var(--charcoal); margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .cta-inner p { font-size: 1.1rem; color: var(--mid); }
+
+  /* FOOTER (Reused) */
+  footer { background: #111; padding: 3.5rem 5%; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between; }
+  .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 0.4rem; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+  .footer-links a { font-size: 0.9rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-copy { width: 100%; font-size: 0.8rem; color: rgba(255,255,255,0.25); text-align: center; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; margin-top: 0.5rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .about-hero { grid-template-columns: 1fr; text-align: center; padding-top: 3rem; }
+    .hero-sub { margin: 0 auto; }
+    .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .story-stats { border-left: none; border-top: 1px solid rgba(0,0,0,0.1); padding-left: 0; padding-top: 2rem; flex-direction: row; justify-content: space-around; }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    nav ul { display: none; }
+    .menu-toggle { display: flex; }
+    .story-stats { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+</style>
