@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import CatCard from '../../components/CatCard.astro'; 
+import CatCard from '../../components/CatCard.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro'; 
 
 export async function getStaticPaths() {
   const cats = await getCollection('cats');
@@ -42,19 +44,7 @@ const displayCats = otherAvailableCats
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="/" class="logo">Pawswick<span>Rescue</span></a>
-    <ul>
-      <li><a href="/cats">Meet the cats</a></li>
-      <li><a href="/about">About us</a></li>
-      <li><a href="/volunteer">Volunteer</a></li>
-      <li><a href="/adopt" class="nav-cta">Adopt now</a></li>
-    </ul>
-    <button class="menu-toggle" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <Nav currentPath="/cats" />
 
   <!-- BREADCRUMB -->
   <nav class="breadcrumb">
@@ -147,23 +137,7 @@ const displayCats = otherAvailableCats
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo">Pawswick<span>Rescue</span></span>
-        <p>A small rescue doing big things for cats in need.</p>
-      </div>
-      <div class="footer-links">
-        <a href="/cats">Cats for adoption</a>
-        <a href="/about">About us</a>
-        <a href="/volunteer">Volunteer</a>
-        <a href="/contact">Contact</a>
-        <a href="/donate">Donate</a>
-      </div>
-      <p class="footer-copy">&copy; {new Date().getFullYear()} Pawswick Rescue. Registered charity.</p>
-    </div>
-  </footer>
+  <Footer />
 
 </body>
 </html>
@@ -195,72 +169,6 @@ const displayCats = otherAvailableCats
     background: var(--cream);
     color: var(--charcoal);
     overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 5%;
-    background: rgba(255, 248, 240, 0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(242, 100, 48, 0.1);
-  }
-
-  .logo {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: var(--charcoal);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-  }
-  .logo span { color: var(--orange); }
-
-  nav ul {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    align-items: center;
-  }
-
-  nav ul a {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--mid);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  nav ul a:hover { color: var(--charcoal); }
-
-  .nav-cta {
-    background: var(--orange) !important;
-    color: #fff !important;
-    padding: 0.5rem 1.2rem;
-    border-radius: 100px;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover { background: var(--orange2) !important; }
-
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-  }
-  .menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--charcoal);
-    border-radius: 2px;
   }
 
   /* BREADCRUMB */
@@ -543,52 +451,6 @@ const displayCats = otherAvailableCats
     max-width: 440px;
   }
 
-  /* FOOTER */
-  footer {
-    background: #111;
-    padding: 3.5rem 5%;
-  }
-
-  .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .footer-brand p {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.4);
-    margin-top: 0.4rem;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .footer-links a {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: #fff; }
-
-  .footer-copy {
-    width: 100%;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.25);
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.07);
-    padding-top: 1.5rem;
-    margin-top: 0.5rem;
-  }
-
   /* ANIMATIONS */
   @keyframes fade-in {
     from { opacity: 0; transform: translateY(16px); }
@@ -611,8 +473,6 @@ const displayCats = otherAvailableCats
   }
 
   @media (max-width: 600px) {
-    nav ul { display: none; }
-    .menu-toggle { display: flex; }
     .breadcrumb { font-size: 0.8rem; padding: 1rem 5%; }
   }
 </style>

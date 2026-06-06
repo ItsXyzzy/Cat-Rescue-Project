@@ -1,343 +1,183 @@
 ---
-
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get in touch &mdash; Pawswick Rescue</title>
-    <meta name="theme-color" content="#FFF8F0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- NAV -->
-    <nav>
-      <a href="/" class="logo">Pawswick<span>Rescue</span></a>
-      <ul>
-        <li><a href="/cats">Meet the cats</a></li>
-        <li><a href="/about">About us</a></li>
-        <li><a href="/volunteer">Volunteer</a></li>
-        <li><a href="/adopt" class="nav-cta">Adopt now</a></li>
-      </ul>
-      <button class="menu-toggle" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get in touch &mdash; Pawswick Rescue</title>
+  <meta name="theme-color" content="#FFF8F0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-    <!-- PAGE HEADER -->
-    <header class="page-header">
-      <div class="page-header-inner">
-        <div class="page-header-text">
-          <p class="eyebrow">We'd love to hear from you</p>
-          <h1>Get in <em>touch</em></h1>
-          <p class="page-sub">
-            Whether you've got questions about adopting, want to volunteer, or
-            just fancy a chat about cats, we're here for it.
+  <Nav currentPath="/contact" />
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <div class="page-header-text">
+        <p class="eyebrow">We'd love to hear from you</p>
+        <h1>Get in <em>touch</em></h1>
+        <p class="page-sub">Whether you've got questions about adopting, want to volunteer, or just fancy a chat about cats, we're here for it.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="contact-main">
+    <div class="contact-grid">
+      
+      <!-- FORM -->
+      <section class="form-section">
+        <form class="contact-form" name="contact" method="POST" netlify>
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">What's this about?</label>
+            <select id="subject" name="subject" required>
+              <option value="">Choose one...</option>
+              <option value="adoption">I want to adopt a cat</option>
+              <option value="volunteer">I want to volunteer</option>
+              <option value="foster">I'm interested in fostering</option>
+              <option value="donation">I want to donate</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary btn-large">Send message</button>
+        </form>
+      </section>
+
+      <!-- INFO SIDEBAR -->
+      <aside class="info-sidebar">
+        <div class="info-box">
+          <h3>Opening hours</h3>
+          <p>
+            <strong>Monday to Sunday</strong><br>
+            10:00 AM &ndash; 5:00 PM
           </p>
         </div>
+
+        <div class="info-box">
+          <h3>Phone</h3>
+          <p>
+            <a href="tel:+353121345678">+353 (0)1 2134 5678</a><br>
+            <span class="info-note">Best between 11am&ndash;3pm</span>
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>Visit us</h3>
+          <p>
+            Pawswick Rescue<br>
+            45 Smithfield Lane<br>
+            Dublin 7, D07 A2K9<br>
+            Ireland
+          </p>
+        </div>
+
+        <div class="info-box info-box-highlight">
+          <h3>Quick question?</h3>
+          <p>Check our <a href="#faq" class="link-highlight">FAQs</a> first &ndash; chances are we've answered it already.</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- MAP SECTION (placeholder) -->
+  <section class="map-section">
+    <div class="map-inner">
+      <h2>Find us in Dublin</h2>
+      <div class="map-placeholder">
+        <p>Map would go here</p>
+        <p class="map-address">45 Smithfield Lane, Dublin 7</p>
       </div>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main class="contact-main">
-      <div class="contact-grid">
-        <!-- FORM -->
-        <section class="form-section">
-          <form class="contact-form" name="contact" method="POST" netlify>
-            <div class="form-group">
-              <label for="name">Your name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email address</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Phone (optional)</label>
-              <input type="tel" id="phone" name="phone" />
-            </div>
-
-            <div class="form-group">
-              <label for="subject">What's this about?</label>
-              <select id="subject" name="subject" required>
-                <option value="">Choose one...</option>
-                <option value="adoption">I want to adopt a cat</option>
-                <option value="volunteer">I want to volunteer</option>
-                <option value="foster">I'm interested in fostering</option>
-                <option value="donation">I want to donate</option>
-                <option value="other">Something else</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Your message</label>
-              <textarea id="message" name="message" rows="6" required
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary btn-large"
-              >Send message</button
-            >
-          </form>
-        </section>
-
-        <!-- INFO SIDEBAR -->
-        <aside class="info-sidebar">
-          <div class="info-box">
-            <h3>Opening hours</h3>
-            <p>
-              <strong>Monday to Sunday</strong><br />
-              10:00 AM &ndash; 5:00 PM
-            </p>
-          </div>
-
-          <div class="info-box">
-            <h3>Phone</h3>
-            <p>
-              <a href="tel:+353121345678">+353 (0)1 2134 5678</a><br />
-              <span class="info-note">Best between 11am&ndash;3pm</span>
-            </p>
-          </div>
-
-          <div class="info-box">
-            <h3>Visit us</h3>
-            <p>
-              Pawswick Rescue<br />
-              45 Smithfield Lane<br />
-              Dublin 7, D07 A2K9<br />
-              Ireland
-            </p>
-          </div>
-
-          <div class="info-box info-box-highlight">
-            <h3>Quick question?</h3>
-            <p>
-              Check our <a href="#faq" class="link-highlight">FAQs</a> first &ndash;
-              chances are we've answered it already.
-            </p>
-          </div>
-        </aside>
+    </div>
+  </section>
+  <section id="faq" class="contact-main">
+    <h2>Frequently Asked Questions</h2>
+    <p>Here are some of our most commonly asked questions. If you can't find what you're looking for, feel free to send us a message using the form above!</p>
+    <!-- FAQ content would go here -->
+     <div class="faq-item">
+      <h3>How do I adopt a cat?</h3>
+      <p>To adopt a cat, simply fill out the contact form above expressing your interest in adoption. We'll get back to you with the next steps, which typically include an application, a meet-and-greet with the cat, and a home visit.</p>
+    </div>
+      <div class="faq-item">
+        <h3>Can I volunteer without adopting?</h3>
+        <p>Absolutely! We welcome volunteers who want to help out in any way they can, whether it's assisting with events, helping at the shelter, or fostering cats in need.</p>
       </div>
-    </main>
+      <div class="faq-item">
+        <h3>What kind of support do you offer to adopters?</h3>
+        <p>We provide ongoing support to our adopters, including advice on cat care, behavior, and health. We also have a network of local vets and pet services that we can recommend.</p>
+      </div>
+  </section>
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div>
+        <p class="eyebrow eyebrow-light">Ready to adopt?</p>
+        <h2>Browse our cats</h2>
+        <p>See if there's a feline friend waiting for you in our care.</p>
+      </div>
+      <a href="/cats" class="btn-primary btn-large">See available cats</a>
+    </div>
+  </section>
 
-    <!-- MAP SECTION (placeholder) -->
-    <section class="map-section">
-      <div class="map-inner">
-        <h2>Find us in Dublin</h2>
-        <div class="map-placeholder">
-          <p>Map would go here</p>
-          <p class="map-address">45 Smithfield Lane, Dublin 7</p>
-        </div>
-      </div>
-    </section>
-    <section id="faq" class="contact-main">
-      <h2>Frequently Asked Questions</h2>
-      <p>
-        Here are some of our most commonly asked questions. If you can't find
-        what you're looking for, feel free to send us a message using the form
-        above!
-      </p>
-      <!-- FAQ Accordion -->
-      <div class="faq-accordion">
-        <div class="faq-item">
-          <button class="faq-toggle" aria-expanded="false">
-            <span class="faq-title">How do I adopt a cat?</span>
-            <span class="faq-arrow"></span>
-          </button>
-          <div class="faq-content">
-            <p>
-              To adopt a cat, simply fill out the contact form above expressing your
-              interest in adoption. We'll get back to you with the next steps, which
-              typically include an application, a meet-and-greet with the cat, and a
-              home visit.
-            </p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-toggle" aria-expanded="false">
-            <span class="faq-title">Can I volunteer without adopting?</span>
-            <span class="faq-arrow"></span>
-          </button>
-          <div class="faq-content">
-            <p>
-              Absolutely! We welcome volunteers who want to help out in any way they
-              can, whether it's assisting with events, helping at the shelter, or
-              fostering cats in need.
-            </p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-toggle" aria-expanded="false">
-            <span class="faq-title">What kind of support do you offer to adopters?</span>
-            <span class="faq-arrow"></span>
-          </button>
-          <div class="faq-content">
-            <p>
-              We provide ongoing support to our adopters, including advice on cat
-              care, behavior, and health. We also have a network of local vets and
-              pet services that we can recommend.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- CTA BAND -->
-    <section class="cta-band">
-      <div class="cta-inner">
-        <div>
-          <p class="eyebrow eyebrow-light">Ready to adopt?</p>
-          <h2>Browse our cats</h2>
-          <p>See if there's a feline friend waiting for you in our care.</p>
-        </div>
-        <a href="/cats" class="btn-primary btn-large">See available cats</a>
-      </div>
-    </section>
+  <Footer />
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo">Pawswick<span>Rescue</span></span>
-          <p>A small rescue doing big things for cats in need.</p>
-        </div>
-        <div class="footer-links">
-          <a href="/cats">Cats for adoption</a>
-          <a href="/about">About us</a>
-          <a href="/volunteer">Volunteer</a>
-          <a href="/contact">Contact</a>
-          <a href="/donate">Donate</a>
-        </div>
-        <p class="footer-copy">
-          &copy; {new Date().getFullYear()} Pawswick Rescue. Registered charity.
-        </p>
-      </div>
-    </footer>
-
-    <script>
-      document.querySelectorAll('.faq-toggle').forEach(button => {
-        button.addEventListener('click', () => {
-          const isExpanded = button.getAttribute('aria-expanded') === 'true';
-          button.setAttribute('aria-expanded', !isExpanded);
-        });
-      });
-    </script>
-  </body>
+</body>
 </html>
 
 <style is:global>
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --cream: #fff8f0;
-    --cream2: #fff0e0;
-    --orange: #f26430;
-    --orange2: #e04a18;
-    --charcoal: #1c1c1c;
-    --mid: #5a5a5a;
-    --muted: #9a8e85;
-    --green: #2d7d4f;
-    --green-bg: #e6f4ed;
-    --sand: #f5ede3;
-    --radius: 16px;
+    --cream:   #FFF8F0;
+    --cream2:  #FFF0E0;
+    --orange:  #F26430;
+    --orange2: #E04A18;
+    --charcoal:#1C1C1C;
+    --mid:     #5A5A5A;
+    --muted:   #9A8E85;
+    --green:   #2D7D4F;
+    --green-bg:#E6F4ED;
+    --sand:    #F5EDE3;
+    --radius:  16px;
     --radius-sm: 8px;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
-    font-family: "DM Sans", sans-serif;
+    font-family: 'DM Sans', sans-serif;
     background: var(--cream);
     color: var(--charcoal);
     overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 5%;
-    background: rgba(255, 248, 240, 0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(242, 100, 48, 0.1);
-  }
-
-  .logo {
-    font-family: "Fraunces", serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: var(--charcoal);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-  }
-  .logo span {
-    color: var(--orange);
-  }
-
-  nav ul {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    align-items: center;
-  }
-
-  nav ul a {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--mid);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  nav ul a:hover {
-    color: var(--charcoal);
-  }
-
-  .nav-cta {
-    background: var(--orange) !important;
-    color: #fff !important;
-    padding: 0.5rem 1.2rem;
-    border-radius: 100px;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover {
-    background: var(--orange2) !important;
-  }
-
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-  }
-  .menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--charcoal);
-    border-radius: 2px;
   }
 
   /* EYEBROW */
@@ -349,9 +189,7 @@
     color: var(--orange);
     margin-bottom: 0.6rem;
   }
-  .eyebrow-light {
-    color: rgba(242, 100, 48, 0.75);
-  }
+  .eyebrow-light { color: rgba(242, 100, 48, 0.75); }
 
   /* PAGE HEADER */
   .page-header {
@@ -366,7 +204,7 @@
   }
 
   .page-header-text h1 {
-    font-family: "Fraunces", serif;
+    font-family: 'Fraunces', serif;
     font-size: clamp(2.8rem, 5vw, 4.5rem);
     font-weight: 700;
     letter-spacing: -0.03em;
@@ -424,13 +262,11 @@
     padding: 0.85rem 1rem;
     border: 1px solid rgba(28, 28, 28, 0.12);
     border-radius: var(--radius-sm);
-    font-family: "DM Sans", sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 1rem;
     color: var(--charcoal);
     background: #fff;
-    transition:
-      border-color 0.2s,
-      box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
 
   .form-group input:focus,
@@ -444,7 +280,7 @@
   .form-group textarea {
     resize: vertical;
     min-height: 140px;
-    font-family: "DM Sans", sans-serif;
+    font-family: 'DM Sans', sans-serif;
   }
 
   .form-group select {
@@ -471,7 +307,7 @@
   }
 
   .info-box h3 {
-    font-family: "Fraunces", serif;
+    font-family: 'Fraunces', serif;
     font-size: 1.15rem;
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -491,9 +327,7 @@
     font-weight: 500;
     transition: color 0.2s;
   }
-  .info-box a:hover {
-    color: var(--orange2);
-  }
+  .info-box a:hover { color: var(--orange2); }
 
   .info-note {
     font-size: 0.8rem;
@@ -524,7 +358,7 @@
   }
 
   .map-inner h2 {
-    font-family: "Fraunces", serif;
+    font-family: 'Fraunces', serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     color: #fff;
@@ -568,7 +402,7 @@
   }
 
   .cta-inner h2 {
-    font-family: "Fraunces", serif;
+    font-family: 'Fraunces', serif;
     font-size: clamp(1.8rem, 3vw, 2.6rem);
     font-weight: 700;
     color: #fff;
@@ -593,22 +427,14 @@
     font-weight: 600;
     font-size: 1rem;
     text-decoration: none;
-    transition:
-      background 0.2s,
-      transform 0.15s;
-    font-family: "DM Sans", sans-serif;
+    transition: background 0.2s, transform 0.15s;
+    font-family: 'DM Sans', sans-serif;
     border: none;
     cursor: pointer;
     text-align: center;
   }
-  .btn-primary:hover {
-    background: var(--orange2);
-    transform: translateY(-2px);
-  }
-  .btn-large {
-    padding: 1rem 2.4rem;
-    font-size: 1.05rem;
-  }
+  .btn-primary:hover { background: var(--orange2); transform: translateY(-2px); }
+  .btn-large { padding: 1rem 2.4rem; font-size: 1.05rem; }
 
   /* FAQ */
   #faq {
@@ -618,7 +444,7 @@
     margin-bottom: 4rem;
   }
   #faq h2 {
-    font-family: "Fraunces", serif;
+    font-family: 'Fraunces', serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     color: var(--charcoal);
@@ -632,161 +458,39 @@
     max-width: 600px;
   }
 
-  /* FAQ Accordion */
-  .faq-accordion {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
   .faq-item {
     background: #fff;
     border: 1px solid rgba(28, 28, 28, 0.08);
     border-radius: var(--radius);
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .faq-item:hover {
-    border-color: rgba(242, 100, 48, 0.3);
-    box-shadow: 0 4px 12px rgba(28, 28, 28, 0.08);
-  }
-
-  .faq-toggle {
-    width: 100%;
     padding: 1.5rem;
-    background: #fff;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    font-family: "Fraunces", serif;
+    margin-top: 1.5rem;
+  }
+  .faq-item:first-child { margin-top: 0; }
+  .faq-item:hover {
+    border-color: var(--orange);
+    box-shadow: 0 4px 12px rgba(28, 28, 28, 0.05);
+    transform: translateY(-2px);
+  }
+  .
+  .faq-item h3 {
+    font-family: 'Fraunces', serif;
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--charcoal);
-    text-align: left;
-    transition: all 0.2s ease;
+    margin-bottom: 0.8rem;
   }
-
-  .faq-toggle:hover {
-    color: var(--orange);
-  }
-
-  .faq-title {
-    flex: 1;
-  }
-
-  .faq-arrow {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    background: linear-gradient(45deg, transparent 40%, var(--charcoal) 40%, var(--charcoal) 60%, transparent 60%),
-                linear-gradient(-45deg, transparent 40%, var(--charcoal) 40%, var(--charcoal) 60%, transparent 60%);
-    background-size: 8px 8px;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: transform 0.3s ease;
-  }
-
-  .faq-toggle[aria-expanded="true"] .faq-arrow {
-    transform: rotate(180deg);
-  }
-
-  .faq-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0 1.5rem;
-  }
-
-  .faq-item:has(.faq-toggle[aria-expanded="true"]) .faq-content {
-    max-height: 500px;
-    padding: 0 1.5rem 1.5rem 1.5rem;
-  }
-
-  .faq-content p {
+  .faq-item p {
     font-size: 0.9rem;
     line-height: 1.7;
     color: var(--mid);
   }
-  /* FOOTER */
-  footer {
-    background: #111;
-    padding: 3.5rem 5%;
-  }
-
-  .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .footer-brand p {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.4);
-    margin-top: 0.4rem;
-  }
-  .footer-brand .logo {
-    color: #fff;
-  }
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .footer-links a {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover {
-    color: #fff;
-  }
-
-  .footer-copy {
-    width: 100%;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.25);
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
-    padding-top: 1.5rem;
-    margin-top: 0.5rem;
-  }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    .contact-grid {
-      grid-template-columns: 1fr;
-    }
-    .cta-inner {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+    .contact-grid { grid-template-columns: 1fr; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
   }
 
   @media (max-width: 600px) {
-    nav ul {
-      display: none;
-    }
-    .menu-toggle {
-      display: flex;
-    }
-    .footer-inner {
-      flex-direction: column;
-      text-align: center;
-    }
-    .footer-links {
-      justify-content: center;
-    }
   }
 </style>

@@ -1,5 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
 const allCats = await getCollection('cats', ({ data }) => data.status === 'Available');
 const featuredCats = allCats.slice(0, 3);
 
@@ -29,26 +32,14 @@ const steps = [
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="/" class="logo">Pawswick<span>Rescue</span></a>
-    <ul>
-      <li><a href="/cats">Meet the cats</a></li>
-      <li><a href="/about">About us</a></li>
-      <li><a href="/volunteer">Volunteer</a></li>
-      <li><a href="/adopt" class="nav-cta">Adopt now</a></li>
-    </ul>
-    <button class="menu-toggle" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <Nav currentPath="/" />
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
       <p class="eyebrow">Open every day, 10am &ndash; 5pm</p>
-      <h1>Every cat<br /><em>deserves</em> a<br />soft landing.</h1>
-      <p class="hero-sub">We're a small, independent rescue in the heart of Pawswick. Run by volunteers, fuelled by tea, and completely mad about cats.</p>
+      <h1>Every cat<br /><em>deserves</em> a<br />warm home.</h1>
+      <p class="hero-sub">We're a small, independent rescue in the heart of Dublin. Run by volunteers, and commited to care and treatment of cats in need.</p>
       <div class="hero-actions">
         <a href="/cats" class="btn-primary">Meet our cats</a>
         <a href="/about" class="btn-ghost">Our story</a>
@@ -155,33 +146,7 @@ const steps = [
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo">Pawswick<span>Rescue</span></span>
-        <p>A small rescue doing big things for cats in need.</p>
-      </div>
-      <div class="footer-links">
-        <a href="/cats">Cats for adoption</a>
-        <a href="/about">About us</a>
-        <a href="/volunteer">Volunteer</a>
-        <a href="/contact">Contact</a>
-        <a href="/donate">Donate</a>
-      </div>
-      <p class="footer-copy">&copy; {new Date().getFullYear()} Pawswick Rescue. Registered charity.</p>
-    </div>
-  </footer>
-
-  <!-- MOBILE NAVIGATION SCRIPT -->
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-
-    menuToggle?.addEventListener('click', () => {
-      nav?.classList.toggle('nav-open');
-    });
-  </script>
+  <Footer />
 </body>
 </html>
 
@@ -214,73 +179,6 @@ const steps = [
     background: var(--cream);
     color: var(--charcoal);
     overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 5%;
-    background: rgba(255, 248, 240, 0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(242, 100, 48, 0.1);
-  }
-
-  .logo {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: var(--charcoal);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-  }
-  .logo span { color: var(--orange); }
-
-  nav ul {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    align-items: center;
-  }
-
-  nav ul a {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--mid);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  nav ul a:hover { color: var(--charcoal); }
-
-  .nav-cta {
-    background: var(--orange) !important;
-    color: #fff !important;
-    padding: 0.5rem 1.2rem;
-    border-radius: 100px;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover { background: var(--orange2) !important; }
-
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-  }
-  .menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--charcoal);
-    border-radius: 2px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
   /* EYEBROW */
@@ -791,56 +689,6 @@ const steps = [
     margin: 0;
   }
 
-  /* FOOTER */
-  footer {
-    background: #111;
-    padding: 3.5rem 5%;
-  }
-
-  .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .footer-brand .logo {
-    color: #fff;
-  }
-
-  .footer-brand p {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.4);
-    margin-top: 0.4rem;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .footer-links a {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: #fff; }
-
-  .footer-copy {
-    width: 100%;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.25);
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.07);
-    padding-top: 1.5rem;
-    margin-top: 0.5rem;
-  }
-
   /* RESPONSIVE & MOBILE FLYOUT CONFIGURATION */
   @media (max-width: 900px) {
     .hero {
@@ -861,35 +709,7 @@ const steps = [
   }
 
   @media (max-width: 600px) {
-    .menu-toggle { display: flex; z-index: 101; }
-    
-    nav ul {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background: rgba(255, 248, 240, 0.98);
-      backdrop-filter: blur(16px);
-      padding: 2rem;
-      gap: 1.5rem;
-      border-bottom: 1px solid rgba(242, 100, 48, 0.12);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    nav.nav-open ul {
-      display: flex;
-    }
-
-    nav.nav-open .menu-toggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    nav.nav-open .menu-toggle span:nth-child(2) { opacity: 0; }
-    nav.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
     .cat-grid { grid-template-columns: 1fr; }
     .stats-strip { gap: 2rem; }
-    .footer-inner { flex-direction: column; text-align: center; }
-    .footer-links { justify-content: center; }
   }
 </style>

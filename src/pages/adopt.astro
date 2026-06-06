@@ -1,0 +1,738 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adopt a Cat &mdash; Pawswick Rescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <Nav currentPath="/adopt" />
+
+  <!-- HERO -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <div class="header-text">
+        <p class="eyebrow">Give a cat a home</p>
+        <h1>Ready to <em>adopt?</em></h1>
+        <p class="page-sub">Adopting from Pawswick is straightforward. Fill in a short expression of interest, we'll have a chat, and if everything lines up you could be taking your new companion home within the week.</p>
+        <a href="#apply" class="btn-primary btn-large">Start your application</a>
+      </div>
+      <div class="header-aside">
+        <div class="fee-card">
+          <p class="fee-label">Adoption fee</p>
+          <p class="fee-amount">&euro;35</p>
+          <p class="fee-note">Payable at the shelter on collection. Covers initial vet check, microchipping, and first vaccinations.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- REQUIREMENTS -->
+  <section class="requirements-section">
+    <div class="req-inner">
+      <div class="req-header">
+        <p class="eyebrow">Before you apply</p>
+        <h2>What we ask of adopters</h2>
+        <p>Nothing unreasonable. We just want to make sure every cat goes to a home where they'll genuinely thrive.</p>
+      </div>
+
+      <div class="req-grid">
+        <div class="req-card req-card-yes">
+          <h3>We ask that you&hellip;</h3>
+          <ul>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Keep your cat indoors or provide a secure outdoor space
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Have your cat neutered if they aren't already (we can advise on this)
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Keep up with annual vaccinations and vet check-ups
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Let us know if your circumstances change and you can no longer care for the cat
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Allow a home visit if we feel it's necessary (not always required)
+            </li>
+          </ul>
+        </div>
+
+        <div class="req-card req-card-no">
+          <h3>We won't adopt to&hellip;</h3>
+          <ul>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              Households where all adults haven't agreed to the adoption
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              Renters who haven't confirmed their landlord allows pets
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              Applicants under 18 years old
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              Anyone who intends to let the cat roam freely in a high-traffic area
+            </li>
+          </ul>
+        </div>
+
+        <div class="req-card req-card-info">
+          <div class="info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <h3>Not sure if you qualify?</h3>
+          <p>Just reach out before applying. We're not here to catch people out, we genuinely want to find the right match for every cat and every family.</p>
+          <a href="/contact" class="link-orange">Get in touch first &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process-section">
+    <div class="process-inner">
+      <p class="eyebrow">The process</p>
+      <h2>Simple from start to finish</h2>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <div class="process-line"></div>
+          <h3>Express interest</h3>
+          <p>Fill in the short form below. Takes about 5 minutes. Tell us about your home and which cat caught your eye.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <div class="process-line"></div>
+          <h3>We'll be in touch</h3>
+          <p>One of our team will give you a call within 2&ndash;3 days for a casual 15-minute chat.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <div class="process-line"></div>
+          <h3>Visit the shelter</h3>
+          <p>Come meet your potential new companion in person. No pressure, no commitment at this stage.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">04</div>
+          <div class="process-line hide-line"></div>
+          <h3>Take them home</h3>
+          <p>Sign the adoption agreement, pay the &euro;35 fee, and walk out the door with your new best mate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="apply-section" id="apply">
+    <div class="apply-inner">
+      <div class="apply-header">
+        <p class="eyebrow">Step one</p>
+        <h2>Expression of interest</h2>
+        <p>No commitment at this stage. We just want to get a feel for you and your home.</p>
+      </div>
+
+      <form class="apply-form" name="adopt" method="POST" netlify>
+
+        <fieldset>
+          <legend>About you</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="age">Your age</label>
+              <input type="number" id="age" name="age" min="18" placeholder="Must be 18+" required />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your home</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="home-type">Type of home</label>
+              <select id="home-type" name="home-type" required>
+                <option value="">Choose one...</option>
+                <option value="house-garden">House with garden</option>
+                <option value="house-no-garden">House without garden</option>
+                <option value="apartment">Apartment</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="tenure">Do you own or rent?</label>
+              <select id="tenure" name="tenure" required>
+                <option value="">Choose one...</option>
+                <option value="owner">Owner</option>
+                <option value="renter-permission">Renting &mdash; landlord allows pets</option>
+                <option value="renter-unsure">Renting &mdash; not yet confirmed</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="adults">Adults in household</label>
+              <select id="adults" name="adults">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4+">4+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="children">Children in household</label>
+              <select id="children" name="children">
+                <option value="none" selected>None</option>
+                <option value="under-5">Yes, under 5</option>
+                <option value="5-12">Yes, 5&ndash;12</option>
+                <option value="teens">Yes, teenagers</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="other-pets">Do you have other pets?</label>
+            <select id="other-pets" name="other-pets">
+              <option value="none">No other pets</option>
+              <option value="cats">Yes &mdash; other cats</option>
+              <option value="dogs">Yes &mdash; dogs</option>
+              <option value="both">Yes &mdash; cats and dogs</option>
+              <option value="other">Yes &mdash; other animals</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>The cat</legend>
+          <div class="form-group">
+            <label for="cat-interest">Is there a specific cat you're interested in?</label>
+            <input type="text" id="cat-interest" name="cat-interest" placeholder="Leave blank if you're open to meeting any of our cats" />
+          </div>
+          <div class="form-group">
+            <label for="experience">Your experience with cats</label>
+            <select id="experience" name="experience" required>
+              <option value="">Choose one...</option>
+              <option value="first-time">First-time cat owner</option>
+              <option value="childhood">Had cats growing up</option>
+              <option value="previous">Owned cats as an adult before</option>
+              <option value="current">Currently have or recently had cats</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Anything else you'd like us to know?</label>
+            <textarea id="message" name="message" rows="5" placeholder="Why you're looking to adopt, your lifestyle, working hours, anything that feels relevant..."></textarea>
+          </div>
+        </fieldset>
+
+        <div class="form-footer">
+          <p class="form-note">By submitting this form you agree to us contacting you about your application. We don't share your details with anyone else.</p>
+          <button type="submit" class="btn-primary btn-large">Submit expression of interest</button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <Footer />
+
+</body>
+</html>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:    #FFF8F0;
+    --cream2:   #FFF0E0;
+    --orange:   #F26430;
+    --orange2:  #E04A18;
+    --charcoal: #1C1C1C;
+    --mid:      #5A5A5A;
+    --muted:    #9A8E85;
+    --green:    #2D7D4F;
+    --green-bg: #E6F4ED;
+    --red:      #B91C1C;
+    --red-bg:   #FEE2E2;
+    --sand:     #F5EDE3;
+    --radius:   16px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.6rem;
+  }
+
+  /* HEADER */
+  .page-header {
+    background: var(--charcoal);
+    padding: 5rem 5%;
+  }
+
+  .page-header-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .header-text h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 1.2rem;
+  }
+  .header-text h1 em { font-style: italic; color: var(--orange); }
+
+  .page-sub {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+
+  /* FEE CARD */
+  .fee-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    padding: 2.5rem 3rem;
+    text-align: center;
+    min-width: 220px;
+  }
+
+  .fee-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0.5rem;
+  }
+
+  .fee-amount {
+    font-family: 'Fraunces', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .fee-note {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.4);
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  /* REQUIREMENTS */
+  .requirements-section {
+    padding: 6rem 5%;
+  }
+
+  .req-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .req-header {
+    max-width: 540px;
+    margin-bottom: 3rem;
+  }
+
+  .req-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.8rem;
+  }
+
+  .req-header p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--mid);
+  }
+
+  .req-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .req-card {
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid transparent;
+  }
+
+  .req-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .req-card-yes {
+    background: var(--green-bg);
+    border-color: rgba(45, 125, 79, 0.15);
+  }
+  .req-card-yes h3 { color: var(--green); }
+
+  .req-card-no {
+    background: var(--red-bg);
+    border-color: rgba(185, 28, 28, 0.15);
+  }
+  .req-card-no h3 { color: var(--red); }
+
+  .req-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .req-card li {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--charcoal);
+  }
+
+  .req-card-yes li svg { color: var(--green); flex-shrink: 0; margin-top: 2px; }
+  .req-card-no  li svg { color: var(--red);   flex-shrink: 0; margin-top: 2px; }
+
+  .req-card-info {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .info-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(242, 100, 48, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    margin-bottom: 0.4rem;
+  }
+
+  .req-card-info h3 { color: var(--charcoal); }
+
+  .req-card-info p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--mid);
+  }
+
+  .link-orange {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--orange);
+    text-decoration: none;
+    transition: color 0.2s;
+    margin-top: auto;
+  }
+  .link-orange:hover { color: var(--orange2); }
+
+  /* PROCESS */
+  .process-section {
+    background: var(--charcoal);
+    padding: 6rem 5%;
+  }
+
+  .process-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .process-inner h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin-bottom: 3.5rem;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .process-step {
+    position: relative;
+    padding-right: 2rem;
+  }
+
+  .process-num {
+    font-family: 'Fraunces', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .process-line {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    width: calc(100% - 3rem);
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    left: 3rem;
+  }
+  .hide-line { display: none; }
+
+  .process-step h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  .process-step p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* FORM */
+  .apply-section {
+    padding: 6rem 5%;
+    background: var(--cream2);
+  }
+
+  .apply-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .apply-header {
+    margin-bottom: 3rem;
+  }
+
+  .apply-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.6rem;
+  }
+
+  .apply-header p {
+    font-size: 1rem;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  .apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  legend {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    float: left;
+    width: 100%;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(28, 28, 28, 0.12);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--charcoal);
+    background: var(--cream);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--muted); }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(242, 100, 48, 0.1);
+  }
+
+  .form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235A5A5A' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-color: var(--cream);
+    padding-right: 2.5rem;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .form-footer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .form-note {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 380px;
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    padding: 0.85rem 1.8rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    font-family: 'DM Sans', sans-serif;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn-primary:hover { background: var(--orange2); transform: translateY(-2px); }
+  .btn-large { padding: 1rem 2.4rem; font-size: 1.05rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1000px) {
+    .req-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .process-line { display: none; }
+  }
+
+  @media (max-width: 768px) {
+    .page-header-inner { grid-template-columns: 1fr; }
+    .fee-card { text-align: left; padding: 1.8rem; }
+    .req-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-footer { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 600px) {
+    nav ul { display: none; }
+    .menu-toggle { display: flex; }
+    .process-steps { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+</style>

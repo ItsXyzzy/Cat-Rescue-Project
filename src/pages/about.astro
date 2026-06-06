@@ -1,5 +1,8 @@
 ---
 // src/pages/about.astro
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
 const values = [
   { icon: '🐾', title: 'Every cat matters', desc: 'We never give up on a cat, regardless of age, medical needs, or behavioral history. Every life has value.' },
   { icon: '🏡', title: 'Home-based fostering', desc: 'We rely heavily on a network of loving foster homes so our cats learn to trust in a real household environment.' },
@@ -20,18 +23,7 @@ const values = [
 </head>
 <body>
 
-  <nav>
-    <a href="/" class="logo">Pawswick<span>Rescue</span></a>
-    <ul>
-      <li><a href="/cats">Meet the cats</a></li>
-      <li><a href="/about" class="nav-active">About us</a></li>
-      <li><a href="/volunteer">Volunteer</a></li>
-      <li><a href="/adopt" class="nav-cta">Adopt now</a></li>
-    </ul>
-    <button class="menu-toggle" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <Nav currentPath="/about" />
 
   <section class="about-hero">
     <div class="about-hero-text">
@@ -102,22 +94,7 @@ const values = [
     </div>
   </section>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo" style="color: white;">Pawswick<span style="color: var(--orange);">Rescue</span></span>
-        <p>A small rescue doing big things for cats in need.</p>
-      </div>
-      <div class="footer-links">
-        <a href="/cats">Cats for adoption</a>
-        <a href="/about">About us</a>
-        <a href="/volunteer">Volunteer</a>
-        <a href="/contact">Contact</a>
-        <a href="/donate">Donate</a>
-      </div>
-      <p class="footer-copy">&copy; {new Date().getFullYear()} Pawswick Rescue. Registered charity.</p>
-    </div>
-  </footer>
+  <Footer />
 
 </body>
 </html>
@@ -140,31 +117,6 @@ const values = [
 
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
-
-  /* NAV (Reused) */
-  nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 5%; background: rgba(255, 248, 240, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(242, 100, 48, 0.1); }
-  .logo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.4rem; color: var(--charcoal); text-decoration: none; letter-spacing: -0.02em; }
-  .logo span { color: var(--orange); }
-  nav ul { display: flex; gap: 2rem; list-style: none; align-items: center; }
-  nav ul a { font-size: 0.95rem; font-weight: 500; color: var(--mid); text-decoration: none; transition: color 0.2s; }
-  nav ul a:hover { color: var(--charcoal); }
-    nav ul a.nav-active {
-    position: relative;
-  }
-  nav ul a.nav-active::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--orange);
-    border-radius: 2px;
-  }
-
-  .nav-cta { background: var(--orange) !important; color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 100px; transition: background 0.2s !important; }
-  .nav-cta:hover { background: var(--orange2) !important; }
-  .menu-toggle { display: none; }
 
   /* COMMON COMPONENTS */
   .eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.6rem; }
@@ -219,18 +171,6 @@ const values = [
   .cta-inner h2 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 700; color: var(--charcoal); margin-bottom: 1rem; letter-spacing: -0.02em; }
   .cta-inner p { font-size: 1.1rem; color: var(--mid); }
 
-  /* FOOTER (Reused) */
-  footer { background: #111; padding: 3.5rem 5%; }
-  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between; }
-  .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 0.4rem; }
-  .footer-brand .logo {
-    color: #fff;
-  }
-  .footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
-  .footer-links a { font-size: 0.9rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: #fff; }
-  .footer-copy { width: 100%; font-size: 0.8rem; color: rgba(255,255,255,0.25); text-align: center; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; margin-top: 0.5rem; }
-
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .about-hero { grid-template-columns: 1fr; text-align: center; padding-top: 3rem; }
@@ -240,10 +180,6 @@ const values = [
     .values-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
-    nav ul { display: none; }
-    .menu-toggle { display: flex; }
     .story-stats { flex-direction: column; text-align: center; gap: 1.5rem; }
-    .footer-inner { flex-direction: column; text-align: center; }
-    .footer-links { justify-content: center; }
   }
 </style>
