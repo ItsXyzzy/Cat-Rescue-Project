@@ -13,6 +13,7 @@ const values = [
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Pawswick Rescue</title>
+  <meta name="theme-color" content="#FFF8F0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -23,7 +24,7 @@ const values = [
     <a href="/" class="logo">Pawswick<span>Rescue</span></a>
     <ul>
       <li><a href="/cats">Meet the cats</a></li>
-      <li><a href="/about">About us</a></li>
+      <li><a href="/about" class="nav-active">About us</a></li>
       <li><a href="/volunteer">Volunteer</a></li>
       <li><a href="/adopt" class="nav-cta">Adopt now</a></li>
     </ul>
@@ -147,6 +148,20 @@ const values = [
   nav ul { display: flex; gap: 2rem; list-style: none; align-items: center; }
   nav ul a { font-size: 0.95rem; font-weight: 500; color: var(--mid); text-decoration: none; transition: color 0.2s; }
   nav ul a:hover { color: var(--charcoal); }
+    nav ul a.nav-active {
+    position: relative;
+  }
+  nav ul a.nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--orange);
+    border-radius: 2px;
+  }
+
   .nav-cta { background: var(--orange) !important; color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 100px; transition: background 0.2s !important; }
   .nav-cta:hover { background: var(--orange2) !important; }
   .menu-toggle { display: none; }
@@ -208,6 +223,9 @@ const values = [
   footer { background: #111; padding: 3.5rem 5%; }
   .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between; }
   .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 0.4rem; }
+  .footer-brand .logo {
+    color: #fff;
+  }
   .footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
   .footer-links a { font-size: 0.9rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: #fff; }

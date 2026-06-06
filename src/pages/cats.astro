@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 const allCats = await getCollection('cats');
 
 const available   = allCats.filter(c => c.data.status === 'Available');
-const reserved    = allCats.filter(c => c.data.status === 'Reserved');
+const reserved    = allCats.filter(c => c.data.status === 'Pending');
 const adopted     = allCats.filter(c => c.data.status === 'Adopted');
 ---
 
@@ -14,6 +14,7 @@ const adopted     = allCats.filter(c => c.data.status === 'Adopted');
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cats for Adoption &mdash; Pawswick Rescue</title>
+  <meta name="theme-color" content="#FFF8F0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -812,7 +813,9 @@ const adopted     = allCats.filter(c => c.data.status === 'Adopted');
     align-items: center;
     justify-content: space-between;
   }
-
+  .footer-brand .logo {
+    color: #fff;
+  }
   .footer-brand p {
     font-size: 0.85rem;
     color: rgba(255,255,255,0.4);

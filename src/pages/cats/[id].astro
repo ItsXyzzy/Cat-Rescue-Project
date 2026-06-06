@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import CatCard from '../../components/CatCard.astro'; 
 
 export async function getStaticPaths() {
   const cats = await getCollection('cats');
@@ -15,6 +16,19 @@ const { name, age, image, goodWithKids, status } = cat.data;
 const isAvailable = status === 'Available';
 const statusLabel = status === 'Pending' ? 'Reserved' : status === 'Adopted' ? 'Adopted' : 'Available';
 const statusColor = status === 'Available' ? 'status-green' : status === 'Adopted' ? 'status-gray' : 'status-amber';
+
+// Fetch all cats
+const allCats = await getCollection('cats');
+
+// Filter for OTHER cats that are currently "Available"
+const otherAvailableCats = allCats.filter(c => 
+  c.id !== cat.id && c.data.status === 'Available'
+);
+
+// Shuffle them and grab up to 3
+const displayCats = otherAvailableCats
+  .sort(() => 0.5 - Math.random())
+  .slice(0, 3);
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -92,19 +106,34 @@ const statusColor = status === 'Available' ? 'status-green' : status === 'Adopte
     </div>
   </section>
 
-  <!-- MORE CATS -->
   <section class="more-cats">
-    <div class="more-cats-inner">
-      <h2>Other cats looking for homes</h2>
+  <div class="more-cats-inner">
+    <h2>Other cats looking for homes</h2>
+    
+    {displayCats.length > 0 ? (
       <div class="more-grid">
-        {/* This would map through other available cats, but for now we'll keep it simple */}
+        {displayCats.map((c) => (
+          <CatCard 
+            id={c.id}
+            name={c.data.name}
+            age={c.data.age}
+            image={c.data.image}
+            status={c.data.status}
+            goodWithKids={c.data.goodWithKids}
+            description={c.data.description}
+          />
+        ))}
+      </div>
+    ) : (
+      <div class="more-grid">
         <div class="placeholder">
-          <p>More cat cards would go here</p>
-          <a href="/cats">Browse all cats</a>
+          <p>All our other sweet residents currently have adoptions pending!</p>
+          <a href="/cats">View adoption center</a>
         </div>
       </div>
-    </div>
-  </section>
+    )}
+  </div>
+</section>
 
   <!-- CTA BAND -->
   <section class="cta-band">
@@ -437,52 +466,51 @@ const statusColor = status === 'Available' ? 'status-green' : status === 'Adopte
   }
   .btn-ghost:hover { border-color: var(--charcoal); transform: translateY(-2px); }
 
-  /* MORE CATS */
-  .more-cats {
-    background: var(--charcoal);
-    padding: 5rem 5%;
-  }
+  /* MORE CATS SECTION & LAYOUT */
+.more-cats {
+  background: var(--charcoal);
+  padding: 5rem 5%;
+}
 
-  .more-cats-inner {
-    max-width: 1300px;
-    margin: 0 auto;
-  }
+.more-cats-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
 
-  .more-cats h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -0.03em;
-    margin-bottom: 3rem;
-  }
+.more-cats h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: 3rem;
+}
 
-  .more-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem;
-  }
+.more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
 
-  .placeholder {
-    padding: 4rem 2rem;
-    background: rgba(255,255,255,0.05);
-    border-radius: var(--radius);
-    border: 1px solid rgba(255,255,255,0.1);
-    text-align: center;
-  }
-
-  .placeholder p {
-    color: rgba(255,255,255,0.4);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-
-  .placeholder a {
-    color: var(--orange);
-    font-weight: 600;
-    text-decoration: none;
-  }
-
+/* FALLBACK PLACEHOLDER */
+.placeholder {
+  grid-column: 1 / -1;
+  padding: 4rem 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+.placeholder p {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.placeholder a {
+  color: var(--orange);
+  font-weight: 600;
+  text-decoration: none;
+}
   /* CTA BAND */
   .cta-band {
     background: var(--charcoal);
