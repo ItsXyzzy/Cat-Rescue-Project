@@ -3,7 +3,7 @@ interface Props {
   currentPath?: string;
 }
 
-const { currentPath = '/' } = Astro.props;
+const { currentPath = '/Cat-Rescue-Project' } = Astro.props;
 
 const isActive = (path: string) => {
   return currentPath === path || currentPath.startsWith(path + '/');
@@ -18,7 +18,7 @@ const navLinks = [
 ---
 
 <nav>
-  <a href="/" class="logo">Pawswick<span>Rescue</span></a>
+  <a href="/Cat-Rescue-Project" class="logo">Pawswick<span>Rescue</span></a>
   <ul>
     {navLinks.map(link => (
       <li>
