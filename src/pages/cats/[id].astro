@@ -48,7 +48,7 @@ const displayCats = otherAvailableCats
 
   <!-- BREADCRUMB -->
   <nav class="breadcrumb">
-    <a href={`${import.meta.env.BASE_URL}cats`}>All cats</a>
+    <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}cats`}>All cats</a>
     <span>/</span>
     <span>{name}</span>
   </nav>
@@ -83,13 +83,13 @@ const displayCats = otherAvailableCats
 
         {isAvailable ? (
           <div class="action-section">
-            <a href={`${import.meta.env.BASE_URL}adopt`} class="btn-primary btn-large">Start adoption</a>
-            <a href={`${import.meta.env.BASE_URL}contact`} class="btn-ghost">Visit {name}</a>
+            <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}adopt`} class="btn-primary btn-large">Start adoption</a>
+            <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}contact`} class="btn-ghost">Visit {name}</a>
           </div>
         ) : (
           <div class="unavailable-section">
             <p>{name} is currently {statusLabel === 'Adopted' ? 'in their forever home' : 'pending adoption'}. But there are lots of other amazing cats waiting for you!</p>
-            <a href={`${import.meta.env.BASE_URL}cats`} class="btn-primary">See other cats</a>
+            <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}cats`} class="btn-primary">See other cats</a>
           </div>
         )}
       </div>
@@ -118,7 +118,7 @@ const displayCats = otherAvailableCats
       <div class="more-grid">
         <div class="placeholder">
           <p>All our other sweet residents currently have adoptions pending!</p>
-          <a href={`${import.meta.env.BASE_URL}cats`}>View adoption center</a>
+          <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}cats`}>View adoption center</a>
         </div>
       </div>
     )}
@@ -133,7 +133,7 @@ const displayCats = otherAvailableCats
         <h2>Come and meet {name} in person</h2>
         <p>We're open every day 10am–5pm. No commitment needed, just come by for a visit.</p>
       </div>
-      <a href={`${import.meta.env.BASE_URL}contact`} class="btn-primary btn-large">Get in touch</a>
+      <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}contact`} class="btn-primary btn-large">Get in touch</a>
     </div>
   </section>
 

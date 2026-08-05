@@ -101,7 +101,7 @@ import Footer from '../components/Footer.astro';
           </div>
           <h3>Not sure if you qualify?</h3>
           <p>Just reach out before applying. We're not here to catch people out, we genuinely want to find the right match for every cat and every family.</p>
-          <a href={`${import.meta.env.BASE_URL}contact`} class="link-orange">Get in touch first &rarr;</a>
+          <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}contact`} class="link-orange">Get in touch first &rarr;</a>
         </div>
       </div>
     </div>

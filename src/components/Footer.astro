@@ -9,11 +9,11 @@
       <p>A small rescue doing big things for cats in need.</p>
     </div>
     <div class="footer-links">
-      <a href={`${import.meta.env.BASE_URL}cats`}>Cats for adoption</a>
-      <a href={`${import.meta.env.BASE_URL}about`}>About us</a>
-      <a href={`${import.meta.env.BASE_URL}volunteer`}>Volunteer</a>
-      <a href={`${import.meta.env.BASE_URL}contact`}>Contact</a>
-      <a href={`${import.meta.env.BASE_URL}donate`}>Donate</a>
+      <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}cats`}>Cats for adoption</a>
+      <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}about`}>About us</a>
+      <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}volunteer`}>Volunteer</a>
+      <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}contact`}>Contact</a>
+      <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}donate`}>Donate</a>
     </div>
     <p class="footer-copy">&copy; {new Date().getFullYear()} Craig Dowdall. This is a template project to demonstrate a simple cat adoption website with CMS.</p>
   </div>

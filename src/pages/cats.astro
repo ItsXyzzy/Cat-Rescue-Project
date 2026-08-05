@@ -169,7 +169,7 @@ const adopted     = allCats.filter(c => c.data.status === 'Adopted');
     <div class="empty-state" style="display:none">
       <p class="empty-icon">&#x1F43F;</p>
       <h3>No cats match that filter</h3>
-      <p>Try a different filter or <a href={`${import.meta.env.BASE_URL}cats`}>view all cats</a>.</p>
+      <p>Try a different filter or <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}cats`}>view all cats</a>.</p>
     </div>
 
   </main>
@@ -183,8 +183,8 @@ const adopted     = allCats.filter(c => c.data.status === 'Adopted');
         <p>There's no commitment to a visit. We're open every day 10am&ndash;5pm and love showing people around.</p>
       </div>
       <div class="cta-actions">
-        <a href={`${import.meta.env.BASE_URL}contact`} class="btn-primary btn-large">Get in touch</a>
-        <a href={`${import.meta.env.BASE_URL}adopt`} class="btn-ghost">How to adopt</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}contact`} class="btn-primary btn-large">Get in touch</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}adopt`} class="btn-ghost">How to adopt</a>
       </div>
     </div>
   </section>
