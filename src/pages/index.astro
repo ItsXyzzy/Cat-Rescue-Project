@@ -41,15 +41,15 @@ const steps = [
       <h1>Every cat<br /><em>deserves</em> a<br />warm home.</h1>
       <p class="hero-sub">We're a small, independent rescue in the heart of Dublin. Run by volunteers, and commited to care and treatment of cats in need.</p>
       <div class="hero-actions">
-        <a href="/cats" class="btn-primary">Meet our cats</a>
-        <a href="/about" class="btn-ghost">Our story</a>
+        <a href={`${import.meta.env.BASE_URL}cats`} class="btn-primary">Meet our cats</a>
+        <a href={`${import.meta.env.BASE_URL}about`} class="btn-ghost">Our story</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
       <div class="hero-img-wrap">
-        <img src="/images/hero-cat.jpg" alt="A happy cat looking for a home" />
+        <img src={`${import.meta.env.BASE_URL}images/hero-cat.jpg`} alt="A happy cat looking for a home" />
       </div>
       <div class="hero-tag">
         <span class="tag-dot"></span>
@@ -75,7 +75,7 @@ const steps = [
         <p class="eyebrow">Ready for a home</p>
         <h2>Looking for their person</h2>
       </div>
-      <a href="/cats" class="see-all">See all cats &rarr;</a>
+      <a href={`${import.meta.env.BASE_URL}cats`} class="see-all">See all cats &rarr;</a>
     </div>
 
     <div class="cat-grid">
@@ -118,7 +118,7 @@ const steps = [
           </div>
         ))}
       </div>
-      <a href="/adopt" class="btn-primary btn-large">Start your adoption</a>
+      <a href={`${import.meta.env.BASE_URL}adopt`} class="btn-primary btn-large">Start your adoption</a>
     </div>
   </section>
 
@@ -129,7 +129,7 @@ const steps = [
         <p class="eyebrow">Get involved</p>
         <h2>We run on good people</h2>
         <p>Whether you can spare a few hours a week or want to foster a cat short-term, we'd love your help. Every pair of hands makes a real difference to the cats in our care.</p>
-        <a href="/volunteer" class="btn-ghost">Become a volunteer</a>
+        <a href={`${import.meta.env.BASE_URL}volunteer`} class="btn-ghost">Become a volunteer</a>
       </div>
       <div class="vol-cards">
         <div class="vol-card">

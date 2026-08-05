@@ -88,8 +88,8 @@ const values = [
       <h2>Ready to meet your new best friend?</h2>
       <p>Take a look at the cats currently waiting for their forever homes.</p>
       <div class="hero-actions" style="justify-content: center; margin-top: 2rem;">
-        <a href="/cats" class="btn-primary btn-large">View our cats</a>
-        <a href="/contact" class="btn-ghost btn-ghost-dark" style="color: var(--charcoal); border-color: var(--charcoal);">Get in touch</a>
+        <a href={`${import.meta.env.BASE_URL}cats`} class="btn-primary btn-large">View our cats</a>
+        <a href={`${import.meta.env.BASE_URL}contact`} class="btn-ghost btn-ghost-dark" style="color: var(--charcoal); border-color: var(--charcoal);">Get in touch</a>
       </div>
     </div>
   </section>

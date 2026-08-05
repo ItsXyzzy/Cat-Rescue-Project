@@ -10,10 +10,10 @@ const isActive = (path: string) => {
 };
 
 const navLinks = [
-  { href: '/cats', label: 'Meet the cats' },
-  { href: '/about', label: 'About us' },
-  { href: '/volunteer', label: 'Volunteer' },
-  { href: '/contact', label: 'Contact' },
+  { href: `${import.meta.env.BASE_URL}cats`, label: 'Meet the cats' },
+  { href: `${import.meta.env.BASE_URL}about`, label: 'About us' },
+  { href: `${import.meta.env.BASE_URL}volunteer`, label: 'Volunteer' },
+  { href: `${import.meta.env.BASE_URL}contact`, label: 'Contact' },
 ];
 ---
 
@@ -29,8 +29,8 @@ const navLinks = [
     ))}
   </ul>
   <div class="nav-ctas">
-    <a href="/donate" class="nav-btn nav-btn-secondary">Donate</a>
-    <a href="/adopt" class="nav-btn nav-btn-primary">Adopt now</a>
+    <a href={`${import.meta.env.BASE_URL}donate`} class="nav-btn nav-btn-secondary">Donate</a>
+    <a href={`${import.meta.env.BASE_URL}adopt`} class="nav-btn nav-btn-primary">Adopt now</a>
   </div>
   <button class="menu-toggle" aria-label="Open menu">
     <span></span><span></span><span></span>

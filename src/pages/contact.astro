@@ -144,7 +144,7 @@ import Footer from '../components/Footer.astro';
         <h2>Browse our cats</h2>
         <p>See if there's a feline friend waiting for you in our care.</p>
       </div>
-      <a href="/cats" class="btn-primary btn-large">See available cats</a>
+      <a href={`${import.meta.env.BASE_URL}cats`} class="btn-primary btn-large">See available cats</a>
     </div>
   </section>
 
