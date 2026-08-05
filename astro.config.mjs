@@ -1,8 +1,8 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
 export default defineConfig({
+  site: 'https://itsxyzzy.github.io',
+  base: '/pawswick-rescue',
   vite: {
     server: {
       allowedHosts: true
